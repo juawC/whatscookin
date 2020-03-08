@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recipesByIngredientFragment">
+
+    <fragment
+        android:id="@+id/recipesByIngredientFragment"
+        android:name="com.app.juawcevada.whatscookin.ui.search.RecipesByIngredientFragment"
+        android:label="RecipesByIngredientFragment"
+        tools:layout="@layout/recipes_by_ingredient_fragment">
+        <action
+            android:id="@+id/action_recipesByIngredientFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.app.juawcevada.whatscookin.ui.recipe.RecipeFragment"
+        tools:layout="@layout/recipe_fragment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>

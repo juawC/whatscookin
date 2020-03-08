@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">What\'s Cookin</string>
+    <string name="error_message">Oops something went wrong!</string>
+    <string name="try_again">Try again</string>
+    <string name="add_ingredient">Add ingredient…</string>
+    <string name="please_add_ingredients_to_start_a_search">No ingredients…</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="ready_in">%d min</string>
+</resources>
