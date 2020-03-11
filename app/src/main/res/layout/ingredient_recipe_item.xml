@@ -23,7 +23,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="@{String.valueOf(item.amount)}"
-            android:textColor="@color/textDark"
             tools:text="1" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -36,7 +35,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="@{item.name}"
-            android:textColor="@color/textDark"
             tools:text="Apple" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
