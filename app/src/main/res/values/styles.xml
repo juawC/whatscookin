@@ -7,13 +7,13 @@
     </style>
 
     <style name="ShapeAppearanceSmall" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSize">1dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">2dp</item>
     </style>
 
     <style name="ShapeAppearanceMedium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSize">1dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
     </style>
 
     <style name="ShapeAppearanceLarge" parent="ShapeAppearance.MaterialComponents.LargeComponent">

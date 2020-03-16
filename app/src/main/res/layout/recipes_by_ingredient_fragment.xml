@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.app.juawcevada.whatscookin.ui.search.RecipesByIngredientViewModel" />
@@ -26,7 +27,7 @@
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:contentScrim="@android:color/white"
+                app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
                 <LinearLayout
@@ -50,6 +51,7 @@
                         setSearchIngredients="@{viewModel.viewState.ingredients}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="?android:attr/colorBackground"
                         android:paddingStart="8dp"
                         android:paddingTop="8dp"
                         android:paddingEnd="8dp"
@@ -63,12 +65,11 @@
                             android:id="@+id/searchBar"
                             android:layout_width="wrap_content"
                             android:layout_height="46dp"
-                            android:textAppearance="@style/Body1"
                             android:background="@null"
                             android:hint="@string/add_ingredient"
                             android:minWidth="92dp"
-                            android:textColor="?attr/colorOnBackground"
-                            android:textColorHint="@android:color/darker_gray" />
+                            android:textAppearance="@style/Body1"
+                            android:textColor="?attr/colorOnBackground" />
                         <!-- Chips can be declared here, or added dynamically. -->
                     </com.google.android.material.chip.ChipGroup>
                 </LinearLayout>
