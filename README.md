@@ -5,14 +5,14 @@ The app has just two screens, one screen with the list of recipes by ingredient 
 There is also an autocomplete functionality for adding ingredients.
 
 ## Screens
-<img src="character_list_screen.gif"><br/>
+<img src="flow.gif" width="400"><br/>
 **Recipe search**<br/>
-<img src="empty_screen.png" width="400">
-<img src="auto_complete_screen.png" width="400"  align="right">
-<img src="ingredient_search_screen.png" width="400"><br/>
+<img src="empty_screen.png" width="300">
+<img src="auto_complete_screen.png" width="300">
+<img src="ingredient_search_screen.png" width="300"><br/>
 <br/>
 **Recipe details**<br/>
-<img src="detail_screen.png" width="400">
+<img src="detail_screen.png" width="300">
 
 ## Tech-stack
 This project is written in kotlin and takes advantage of many popular
