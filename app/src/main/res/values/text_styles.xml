@@ -35,6 +35,11 @@
         <item name="android:fontFamily">monospace</item>
     </style>
 
+    <style name="Headline5" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">monospace</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
     <style name="ToolbarTheme" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <item name="fontFamily">monospace</item>
         <item name="android:fontFamily">monospace</item>

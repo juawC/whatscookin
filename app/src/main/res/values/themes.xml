@@ -9,6 +9,7 @@
         <item name="colorSurface">@android:color/white</item>
         <item name="colorOnBackground">@color/textDark</item>
         <item name="hintTextColor">@color/colorAccent</item>
+        <item name="textColorLight">@color/gray_light</item>
 
         <item name="android:windowTranslucentStatus">true</item>
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearanceSmall</item>

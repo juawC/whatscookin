@@ -6,10 +6,11 @@
         <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/gray_night</item>
-        <item name="colorSurface">@color/gray_dark</item>
+        <item name="colorSurface">@color/gray_light</item>
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorOnBackground">@android:color/white</item>
         <item name="colorOnSurface">@android:color/white</item>
+        <item name="textColorLight">@android:color/white</item>
 
         <item name="android:windowTranslucentStatus">true</item>
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearanceSmall</item>
