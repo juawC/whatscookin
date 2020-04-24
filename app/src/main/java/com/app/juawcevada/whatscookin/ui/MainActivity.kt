@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
