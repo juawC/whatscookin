@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
 import coil.api.load
+import com.app.juawcevada.whatscookin.R
 
 
 @BindingAdapter("setVisible")
@@ -26,7 +27,19 @@ fun bindImage(imageView: ImageView, url: String?) {
 }
 
 @BindingAdapter("htmlText")
-fun bindImage(textView: TextView, text: String?) {
+fun bindHtpText(textView: TextView, text: String?) {
     if (text == null) return
     textView.text = HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY)
 }
+
+
+@BindingAdapter("placeHolderText")
+fun bindPlaceHolderText(textView: TextView, text: String?) {
+    if (text.isNullOrEmpty()) {
+        textView.setBackgroundColor(textView.context.getColorByAttr(R.attr.textColorLight))
+    } else {
+        textView.text = HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY)
+        textView.background = null
+    }
+}
+

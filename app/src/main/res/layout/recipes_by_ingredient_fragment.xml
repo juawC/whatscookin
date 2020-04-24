@@ -110,7 +110,7 @@
             android:drawablePadding="24dp"
             android:gravity="center"
             android:text="@string/no_recipes"
-            android:textAppearance="@style/Headline5"
+            android:textAppearance="@style/Headline6"
             android:textColor="?attr/textColorLight"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:setVisible="@{viewModel.viewState.emptyView}"
