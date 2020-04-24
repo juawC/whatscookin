@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLightDarker</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/gray_night</item>
-        <item name="colorSurface">@color/gray_light</item>
+        <item name="colorSurface">@color/gray_dark</item>
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorOnBackground">@android:color/white</item>
         <item name="colorOnSurface">@android:color/white</item>
-        <item name="textColorLight">@android:color/white</item>
+        <item name="textColorLight">@color/gray_light</item>
 
         <item name="android:windowTranslucentStatus">true</item>
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearanceSmall</item>

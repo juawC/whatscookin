@@ -3,10 +3,11 @@
     <color name="colorPrimary">#06A10B</color>
     <color name="colorPrimaryDark">#1D800E</color>
     <color name="colorPrimaryLight">#7ac35e</color>
+    <color name="colorPrimaryLightDarker">#559e3b</color>
     <color name="colorAccent">#FA8072</color>
     <color name="textDark">#000000</color>
     <color name="gray">#F9F9F9</color>
     <color name="gray_night">#060606</color>
     <color name="gray_dark">#1d1d1d</color>
-    <color name="gray_light">#a0a0a0</color>
+    <color name="gray_light">#A0A0A0</color>
 </resources>
