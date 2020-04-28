@@ -5,9 +5,12 @@ object GradlePluginVersion {
 }
 
 object GradlePluginId {
-    const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:${GradlePluginVersion.BUILD_TOOLS_VERSION}"
-    const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${GradlePluginVersion.KOTLIN_VERSION}"
-    const val SAFE_ARGS_GRADLE_PLUGIN = "androidx.navigation:navigation-safe-args-gradle-plugin:${GradlePluginVersion.SAFE_ARGS}"
+    const val ANDROID_GRADLE_PLUGIN =
+        "com.android.tools.build:gradle:${GradlePluginVersion.BUILD_TOOLS_VERSION}"
+    const val KOTLIN_GRADLE_PLUGIN =
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:${GradlePluginVersion.KOTLIN_VERSION}"
+    const val SAFE_ARGS_GRADLE_PLUGIN =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${GradlePluginVersion.SAFE_ARGS}"
     const val ALL_OPEN = "org.jetbrains.kotlin.plugin.allopen"
     const val ANDROID_APPLICATION = "com.android.application"
     const val KOTLIN_ANDROID = "kotlin-android"

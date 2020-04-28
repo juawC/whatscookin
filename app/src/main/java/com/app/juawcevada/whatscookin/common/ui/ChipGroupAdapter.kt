@@ -1,6 +1,5 @@
 package com.app.juawcevada.whatscookin.common.ui
 
-import android.content.Context
 import android.view.View
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.AsyncListDiffer

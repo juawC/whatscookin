@@ -8,7 +8,8 @@ object AndroidConfig {
     const val VERSION_NAME = "1.0"
 
     const val ID = "com.juawcevada.whatscookin"
-    const val TEST_INSTRUMENTATION_RUNNER = "com.app.juawcevada.whatscookin.util.CustomAppTestRunner"
+    const val TEST_INSTRUMENTATION_RUNNER =
+        "com.app.juawcevada.whatscookin.util.CustomAppTestRunner"
 }
 
 interface BuildType {

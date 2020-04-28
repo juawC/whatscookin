@@ -11,16 +11,16 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
 
 infix fun ViewInteraction.checkThatMatches(matcher: Matcher<in View>): ViewInteraction =
-        this.check(ViewAssertions.matches(matcher))
+    this.check(ViewAssertions.matches(matcher))
 
 infix fun Int.checkThatMatches(matcher: Matcher<in View>): ViewInteraction =
-        onView().checkThatMatches(matcher)
+    onView().checkThatMatches(matcher)
 
 infix fun String.checkThatMatches(matcher: Matcher<in View>): ViewInteraction =
     Espresso.onView(ViewMatchers.withText(this)).checkThatMatches(matcher)
 
 infix fun Int.onRecyclerViewPosition(position: Int): ViewInteraction =
-        Espresso.onView(RecyclerViewMatcher(this).atPosition(position))
+    Espresso.onView(RecyclerViewMatcher(this).atPosition(position))
 
 infix fun ViewInteraction.perform(viewAction: ViewAction) {
     this.perform(viewAction)

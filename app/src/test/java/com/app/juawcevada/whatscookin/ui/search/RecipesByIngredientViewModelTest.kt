@@ -180,27 +180,35 @@ class RecipesByIngredientViewModelTest {
             viewModel.removeIngredient("Chili")
 
             inOrder(viewStateObserver, viewEffectObserver) {
-                verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState(
-                    isLoading = true,
-                    ingredients = listOf("Chili")
-                ))
-                verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState(
-                    isLoading = false,
-                    ingredients = listOf("Chili"),
-                    recipes = recipesList
-                ))
-                verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState(
-                    isLoading = false,
-                    isRefreshing = true,
-                    ingredients = emptyList(),
-                    recipes = recipesList
-                ))
-                verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState(
-                    isLoading = false,
-                    isRefreshing = false,
-                    ingredients = emptyList(),
-                    recipes = emptyList()
-                ))
+                verify(viewStateObserver).onChanged(
+                    RecipesByIngredientViewModel.ViewState(
+                        isLoading = true,
+                        ingredients = listOf("Chili")
+                    )
+                )
+                verify(viewStateObserver).onChanged(
+                    RecipesByIngredientViewModel.ViewState(
+                        isLoading = false,
+                        ingredients = listOf("Chili"),
+                        recipes = recipesList
+                    )
+                )
+                verify(viewStateObserver).onChanged(
+                    RecipesByIngredientViewModel.ViewState(
+                        isLoading = false,
+                        isRefreshing = true,
+                        ingredients = emptyList(),
+                        recipes = recipesList
+                    )
+                )
+                verify(viewStateObserver).onChanged(
+                    RecipesByIngredientViewModel.ViewState(
+                        isLoading = false,
+                        isRefreshing = false,
+                        ingredients = emptyList(),
+                        recipes = emptyList()
+                    )
+                )
                 verify(viewEffectObserver, never()).onChanged(any())
             }
         }

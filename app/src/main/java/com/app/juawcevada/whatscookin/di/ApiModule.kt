@@ -2,7 +2,6 @@ package com.app.juawcevada.whatscookin.di
 
 import com.app.juawcevada.rickspace.di.annotation.ApiConfig
 import com.app.juawcevada.whatscookin.common.data.ApiKeyInterceptor
-import com.app.juawcevada.whatscookin.data.search.api.SearchService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

@@ -18,7 +18,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
-import java.lang.Exception
 
 @ExperimentalCoroutinesApi
 class RecipeViewModelTest {
@@ -46,10 +45,12 @@ class RecipeViewModelTest {
             mockGetRecipeUseCase(Recipe(title = "title").toSuccess())
             initViewModel()
 
-            verify(viewStateObserver).onChanged(RecipeViewModel.ViewState(
-                isLoading = false,
-                recipe = Recipe(title = "title")
-            ))
+            verify(viewStateObserver).onChanged(
+                RecipeViewModel.ViewState(
+                    isLoading = false,
+                    recipe = Recipe(title = "title")
+                )
+            )
         }
 
     @Test
@@ -58,10 +59,12 @@ class RecipeViewModelTest {
             mockGetRecipeUseCase(Exception().toError())
             initViewModel()
 
-            verify(viewStateObserver).onChanged(RecipeViewModel.ViewState(
-                isLoading = false,
-                errorMessage = R.string.error_message
-            ))
+            verify(viewStateObserver).onChanged(
+                RecipeViewModel.ViewState(
+                    isLoading = false,
+                    errorMessage = R.string.error_message
+                )
+            )
         }
 
     private fun initViewModel() {

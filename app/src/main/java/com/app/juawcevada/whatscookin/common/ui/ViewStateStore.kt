@@ -1,8 +1,6 @@
 package com.app.juawcevada.whatscookin.common.ui
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import arrow.core.Either
 import com.app.juawcevada.whatscookin.common.util.Event
 
 interface ViewStateStore<VS : ViewState, VE : ViewEffect, A : Action<VS, VE>> {

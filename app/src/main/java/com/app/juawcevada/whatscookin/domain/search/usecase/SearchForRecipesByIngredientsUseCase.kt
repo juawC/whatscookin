@@ -1,7 +1,7 @@
 package com.app.juawcevada.whatscookin.domain.search.usecase
 
-import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 import com.app.juawcevada.whatscookin.common.data.Result
+import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 import com.app.juawcevada.whatscookin.domain.search.repository.SearchRepository
 import javax.inject.Inject
 

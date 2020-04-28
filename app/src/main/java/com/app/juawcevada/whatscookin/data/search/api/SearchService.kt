@@ -4,7 +4,6 @@ import com.app.juawcevada.whatscookin.data.search.model.IngredientSearchItemResp
 import com.app.juawcevada.whatscookin.data.search.model.RecipeSearchItemResponse
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface SearchService {

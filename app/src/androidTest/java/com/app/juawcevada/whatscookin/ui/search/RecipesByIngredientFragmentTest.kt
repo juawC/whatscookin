@@ -6,7 +6,8 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import androidx.test.espresso.action.ViewActions.typeText
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.R.id.list
 import com.app.juawcevada.whatscookin.R.id.searchBar

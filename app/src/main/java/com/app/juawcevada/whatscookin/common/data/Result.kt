@@ -16,8 +16,6 @@
 
 package com.app.juawcevada.whatscookin.common.data
 
-import com.app.juawcevada.whatscookin.ui.search.RecipesByIngredientViewModel
-
 /**
  * A generic class that holds a value with its loading status.
  * @param <T>

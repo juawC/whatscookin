@@ -3,16 +3,11 @@ package com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
-import androidx.navigation.NavGraph
-import androidx.navigation.NavOptions
-import androidx.navigation.Navigation
-import androidx.navigation.Navigator
+import androidx.navigation.*
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 
-fun createNavControllerMock(currentDestinationId: Int = 1) : NavController = mock {
+fun createNavControllerMock(currentDestinationId: Int = 1): NavController = mock {
     on { currentDestination } doReturn NavDestination("").apply { id = currentDestinationId }
     on { graph } doReturn NavGraph(MockNavigator()).apply {
         startDestination = 1
@@ -20,9 +15,9 @@ fun createNavControllerMock(currentDestinationId: Int = 1) : NavController = moc
     }
 }
 
-fun <T : Fragment> createFactoryWithNavController (
-        mockNavController: NavController,
-        newFragment: () -> T
+fun <T : Fragment> createFactoryWithNavController(
+    mockNavController: NavController,
+    newFragment: () -> T
 ): FragmentFactory {
     return object : FragmentFactory() {
         override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
@@ -43,7 +38,12 @@ fun <T : Fragment> createFactoryWithNavController (
 
 @Navigator.Name("Name")
 class MockNavigator : Navigator<NavGraph>() {
-    override fun navigate(destination: NavGraph, args: Bundle?, navOptions: NavOptions?, navigatorExtras: Extras?): NavDestination? {
+    override fun navigate(
+        destination: NavGraph,
+        args: Bundle?,
+        navOptions: NavOptions?,
+        navigatorExtras: Extras?
+    ): NavDestination? {
         return mock()
     }
 

@@ -12,13 +12,18 @@ private object TestLibraryVersion {
 object TestLibraryDependency {
     const val JUNIT = "junit:junit:${TestLibraryVersion.JUNIT}"
     const val TEST_RUNNER = "com.android.support.test:runner:${TestLibraryVersion.TEST_RUNNER}"
-    const val ESPRESSO_CORE = "com.android.support.test.espresso:espresso-core:${TestLibraryVersion.ESPRESSO_CORE}"
+    const val ESPRESSO_CORE =
+        "com.android.support.test.espresso:espresso-core:${TestLibraryVersion.ESPRESSO_CORE}"
     const val MOCKITO_INLINE = "org.mockito:mockito-inline:${TestLibraryVersion.MOCKITO}"
     const val MOCKITO_ANDROID = "org.mockito:mockito-android:${TestLibraryVersion.MOCKITO}"
-    const val MOCKITO_KOTLIN = "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestLibraryVersion.MOCKITO_KOTLIN}"
-    const val COROUTINES_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${TestLibraryVersion.COROUTINES_ANDROID}"
-    const val ANDROID_X_CORE_TESTING = "android.arch.core:core-testing:${TestLibraryVersion.ANDROID_X_TEST}"
+    const val MOCKITO_KOTLIN =
+        "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestLibraryVersion.MOCKITO_KOTLIN}"
+    const val COROUTINES_TEST =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${TestLibraryVersion.COROUTINES_ANDROID}"
+    const val ANDROID_X_CORE_TESTING =
+        "android.arch.core:core-testing:${TestLibraryVersion.ANDROID_X_TEST}"
     const val ANDROID_X_TEST_RULES = "androidx.test:rules:${TestLibraryVersion.ANDROID_X_TEST}"
     const val ANDROID_X_TEST_KTS = "androidx.test:core-ktx:${TestLibraryVersion.ANDROID_X_TEST}"
-    const val FRAGMENT_TESTING = "androidx.fragment:fragment-testing:${TestLibraryVersion.FRAGMENT_VERSION}"
+    const val FRAGMENT_TESTING =
+        "androidx.fragment:fragment-testing:${TestLibraryVersion.FRAGMENT_VERSION}"
 }

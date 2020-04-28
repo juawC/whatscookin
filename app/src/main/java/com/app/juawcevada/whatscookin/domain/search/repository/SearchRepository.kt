@@ -1,8 +1,8 @@
 package com.app.juawcevada.whatscookin.domain.search.repository
 
-import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 import com.app.juawcevada.whatscookin.common.data.Result
 import com.app.juawcevada.whatscookin.domain.search.model.IngredientSearchItem
+import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 
 interface SearchRepository {
     suspend fun searchRecipesByIngredients(

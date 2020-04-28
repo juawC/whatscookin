@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.app.juawcevada.whatscookin.ui.recipe.RecipeFragment"
-        tools:layout="@layout/recipe_fragment" >
+        tools:layout="@layout/recipe_fragment">
         <argument
             android:name="id"
             app:argType="string" />

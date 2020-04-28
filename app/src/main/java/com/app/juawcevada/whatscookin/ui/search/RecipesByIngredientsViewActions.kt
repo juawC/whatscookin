@@ -1,7 +1,6 @@
 package com.app.juawcevada.whatscookin.ui.search
 
 import com.app.juawcevada.whatscookin.common.ui.LceViewActions
-import com.app.juawcevada.whatscookin.domain.search.model.IngredientSearchItem
 import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 
 interface RecipesByIngredientsViewActions : LceViewActions {

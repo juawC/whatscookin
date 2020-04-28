@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewActions"
             type="com.app.juawcevada.whatscookin.common.ui.LceViewActions" />
 
         <variable
             name="viewState"
-            type="com.app.juawcevada.whatscookin.common.ui.LceViewState"/>
+            type="com.app.juawcevada.whatscookin.common.ui.LceViewState" />
 
     </data>
 
@@ -23,14 +24,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp"/>
+            app:layout_constraintGuide_begin="16dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp"/>
+            app:layout_constraintGuide_end="16dp" />
 
         <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/loadingView"
@@ -43,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintTop_toTopOf="parent"
-            app:setVisible="@{viewState.isLoading}"/>
+            app:setVisible="@{viewState.isLoading}" />
 
         <ImageView
             android:id="@+id/error_icon"
@@ -56,7 +57,7 @@
             app:layout_constraintVertical_chainStyle="packed"
             app:setVisible="@{viewState.errorMessage != null}"
             app:srcCompat="@drawable/ic_error"
-            tools:ignore="ContentDescription"/>
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/error_text_title"
@@ -73,7 +74,7 @@
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@+id/error_icon"
             app:setVisible="@{viewState.errorMessage != null}"
-            tools:text="Oops"/>
+            tools:text="Oops" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/error_retry_button"

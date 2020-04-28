@@ -10,7 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.transition.TransitionInflater
 import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.common.ui.viewModelProvider
 import com.app.juawcevada.whatscookin.databinding.RecipeFragmentBinding

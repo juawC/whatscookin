@@ -35,7 +35,8 @@ class RecipeFragmentTest {
             isLoading = false,
             recipe = RecipeFactory.create(
                 title = "Chicken",
-                summary = "Summary")
+                summary = "Summary"
+            )
         )
 
         "Chicken" checkThatMatches isDisplayed()

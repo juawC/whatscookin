@@ -45,7 +45,11 @@ class RecipesByIngredientFragment : Fragment() {
             searchIngredients.tag =
                 IngredientsChipAdapter(searchIngredients, recipesViewModel::removeIngredient)
 
-            val adapter = IngredientSearchAutoCompleteAdapter(searchBar, viewLifecycleOwner.lifecycle, recipesViewModel)
+            val adapter = IngredientSearchAutoCompleteAdapter(
+                searchBar,
+                viewLifecycleOwner.lifecycle,
+                recipesViewModel
+            )
             viewLifecycleOwner.observeEvent(recipesViewModel.viewEffect) {
                 when (it) {
                     is RecipesByIngredientViewModel.ViewEffect.IngredientsAutoComplete -> {

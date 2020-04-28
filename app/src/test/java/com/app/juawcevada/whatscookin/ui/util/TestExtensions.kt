@@ -7,7 +7,7 @@ fun <T> T.toSuccess(): Result<T> {
     return Result.Success(this)
 }
 
-fun <T, E:Exception> E.toError(): Result<T> {
+fun <T, E : Exception> E.toError(): Result<T> {
     return Result.Error(this)
 }
 

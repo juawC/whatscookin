@@ -1,8 +1,7 @@
 package com.app.juawcevada.whatscookin.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import com.app.juawcevada.whatscookin.R
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector

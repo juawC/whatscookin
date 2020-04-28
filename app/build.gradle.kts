@@ -6,7 +6,7 @@ plugins {
     id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.SAFE_ARGS)
     id(GradlePluginId.KOTLIN_KAPT)
-    id (GradlePluginId.ALL_OPEN) version GradlePluginVersion.KOTLIN_VERSION
+    id(GradlePluginId.ALL_OPEN) version GradlePluginVersion.KOTLIN_VERSION
 }
 
 android {
@@ -47,7 +47,7 @@ android {
         }
     }
 
-    sourceSets{
+    sourceSets {
         getByName("test") {
             java.srcDir("src/test-shared")
         }
