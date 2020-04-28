@@ -3,7 +3,6 @@ package com.app.juawcevada.whatscookin.ui.search
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
-import android.os.Handler
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.ViewGroup

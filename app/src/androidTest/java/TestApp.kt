@@ -7,5 +7,4 @@ class TestApp : android.app.Application(), HasAndroidInjector {
     override fun androidInjector(): AndroidInjector<Any> {
         return AndroidInjector { }
     }
-
 }

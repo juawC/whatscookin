@@ -81,6 +81,7 @@ dependencies {
     implementation(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
     implementation(LibraryDependency.NAVIGATION_UI_KTX)
     implementation(LibraryDependency.LIFECYCLE_VIEW_MODEL_KTX)
+    implementation(LibraryDependency.LIFECYCLE_RUNTIME_KTX)
     implementation(LibraryDependency.LOGGING_INTERCEPTOR)
     implementation(LibraryDependency.PLAY_CORE)
     implementation(LibraryDependency.RETROFIT)
