@@ -7,6 +7,8 @@ import com.app.juawcevada.whatscookin.common.data.Result
 import com.app.juawcevada.whatscookin.domain.recipe.model.Recipe
 import com.app.juawcevada.whatscookin.domain.recipe.usecase.GetRecipeUseCase
 import com.app.juawcevada.whatscookin.ui.util.TestCoroutineRule
+import com.app.juawcevada.whatscookin.ui.util.toError
+import com.app.juawcevada.whatscookin.ui.util.toSuccess
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
@@ -38,11 +40,10 @@ class RecipeViewModelTest {
         MockitoAnnotations.initMocks(this)
     }
 
-
     @Test
-    fun `verify state after getRecipeUseCase returns an recipe`() =
+    fun `returns an recipe when getRecipe is successful`() =
         testCoroutineRule.runBlockingTest {
-            whenever(getRecipeUseCase.invoke(any())).thenReturn(Result.Success(Recipe(title = "title")))
+            mockGetRecipeUseCase(Recipe(title = "title").toSuccess())
             initViewModel()
 
             verify(viewStateObserver).onChanged(RecipeViewModel.ViewState(
@@ -52,9 +53,9 @@ class RecipeViewModelTest {
         }
 
     @Test
-    fun `verify state after getRecipeUseCase returns an error`() =
+    fun `returns an error when getRecipe is not successful`() =
         testCoroutineRule.runBlockingTest {
-            whenever(getRecipeUseCase.invoke(any())).thenReturn(Result.Error(Exception()))
+            mockGetRecipeUseCase(Exception().toError())
             initViewModel()
 
             verify(viewStateObserver).onChanged(RecipeViewModel.ViewState(
@@ -70,5 +71,9 @@ class RecipeViewModelTest {
         ).apply {
             viewState.observeForever(viewStateObserver)
         }
+    }
+
+    private suspend fun mockGetRecipeUseCase(result: Result<Recipe>) {
+        whenever(getRecipeUseCase.invoke(any())).thenReturn(result)
     }
 }
