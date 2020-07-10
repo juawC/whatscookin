@@ -13,9 +13,12 @@ import com.app.juawcevada.whatscookin.domain.recipe.repository.RecipeRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import retrofit2.Retrofit
 
 @Module
+@InstallIn(ApplicationComponent::class)
 abstract class RecipeRepositoryModule {
 
     @Binds
@@ -27,9 +30,7 @@ abstract class RecipeRepositoryModule {
     @Binds
     internal abstract fun recipeMapper(mapper: RecipeMapper): Mapper<RecipeResponse, Recipe>
 
-    @Module
     companion object {
-        @JvmStatic
         @Provides
         internal fun provideApi(
             retrofit: Retrofit

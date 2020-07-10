@@ -1,7 +1,7 @@
-package com.app.juawcevada.rickspace.di.annotation
+package com.app.juawcevada.whatscookin.di.annotation
 
 import javax.inject.Qualifier
 
 @Qualifier
-@Retention(AnnotationRetention.RUNTIME)
+@Retention(AnnotationRetention.BINARY)
 annotation class ApiConfig

@@ -16,9 +16,12 @@ import com.app.juawcevada.whatscookin.domain.search.repository.SearchRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import retrofit2.Retrofit
 
 @Module
+@InstallIn(ApplicationComponent::class)
 abstract class SearchRepositoryModule {
 
     @Binds
@@ -34,9 +37,7 @@ abstract class SearchRepositoryModule {
     internal abstract fun recipeSearchItemMapper(mapper: RecipeSearchItemMapper): Mapper<RecipeSearchItemResponse, RecipeSearchItem>
 
 
-    @Module
     companion object {
-        @JvmStatic
         @Provides
         internal fun provideApi(
             retrofit: Retrofit

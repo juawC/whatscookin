@@ -6,6 +6,7 @@ plugins {
     id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.SAFE_ARGS)
     id(GradlePluginId.KOTLIN_KAPT)
+    id(GradlePluginId.HILT)
     id(GradlePluginId.ALL_OPEN) version GradlePluginVersion.KOTLIN_VERSION
 }
 
@@ -89,12 +90,9 @@ dependencies {
     implementation(LibraryDependency.SPIN_KIT)
     implementation(LibraryDependency.SWIPE_REFRESH_LAYOUT)
     implementation(LibraryDependency.AUTO_COMPLETE)
-    implementation(LibraryDependency.DAGGER)
-    implementation(LibraryDependency.DAGGER_ANDROID)
-    implementation(LibraryDependency.DAGGER_ANDROID_SUPPORT)
-    kapt(LibraryDependency.DAGGER_ANDROID_COMPILER)
+    implementation(LibraryDependency.HILT_ANDROID)
     kapt(LibraryDependency.SWIPE_REFRESH_LAYOUT)
-    kapt(LibraryDependency.DAGGER_COMPILER)
+    kapt(LibraryDependency.HILT_ANDROID_COMPILER)
 
     implementation(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
     implementation(LibraryDependency.COORDINATOR_LAYOUT)

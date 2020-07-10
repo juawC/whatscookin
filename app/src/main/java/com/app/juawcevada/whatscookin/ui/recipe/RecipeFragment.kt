@@ -9,26 +9,26 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.setupWithNavController
 import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.common.ui.viewModelProvider
 import com.app.juawcevada.whatscookin.databinding.RecipeFragmentBinding
-import com.app.juawcevada.whatscookin.di.ViewModelFactory
-import dagger.android.support.AndroidSupportInjection
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.recipe_fragment.*
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class RecipeFragment : Fragment() {
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory<RecipeViewModel>
+    lateinit var viewModelFactory: RecipeViewModel.Factory
     private lateinit var recipeViewModel: RecipeViewModel
+    private val fragmentArguments: RecipeFragmentArgs by navArgs()
 
     override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        recipeViewModel = viewModelProvider(viewModelFactory)
-
         super.onAttach(context)
+        recipeViewModel = viewModelProvider(viewModelFactory.create(fragmentArguments.id))
     }
 
     override fun onCreateView(

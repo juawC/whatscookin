@@ -19,6 +19,7 @@ private object LibraryVersion {
     const val AUTO_COMPLETE = "1.1.0"
     const val DAGGER = "2.26"
     const val SWIPE_REFRESH_LAYOUT = "1.0.0"
+    const val HILT = "2.28-alpha"
 }
 
 object LibraryDependency {
@@ -61,4 +62,6 @@ object LibraryDependency {
         "com.google.dagger:dagger-android-processor:${LibraryVersion.DAGGER}"
     const val SWIPE_REFRESH_LAYOUT =
         "androidx.swiperefreshlayout:swiperefreshlayout:${LibraryVersion.SWIPE_REFRESH_LAYOUT}"
+    const val HILT_ANDROID = "com.google.dagger:hilt-android:${LibraryVersion.HILT}"
+    const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${LibraryVersion.HILT}"
 }

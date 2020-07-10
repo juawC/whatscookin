@@ -14,9 +14,10 @@ import com.app.juawcevada.whatscookin.common.ui.observeEvent
 import com.app.juawcevada.whatscookin.common.ui.viewModelProvider
 import com.app.juawcevada.whatscookin.databinding.RecipesByIngredientFragmentBinding
 import com.app.juawcevada.whatscookin.di.ViewModelFactory
-import dagger.android.support.AndroidSupportInjection
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class RecipesByIngredientFragment : Fragment() {
 
     @Inject
@@ -24,10 +25,8 @@ class RecipesByIngredientFragment : Fragment() {
     private lateinit var recipesViewModel: RecipesByIngredientViewModel
 
     override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        recipesViewModel = viewModelProvider(viewModelFactory)
-
         super.onAttach(context)
+        recipesViewModel = viewModelProvider(viewModelFactory)
     }
 
     override fun onCreateView(

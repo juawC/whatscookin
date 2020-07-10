@@ -7,6 +7,7 @@ import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.common.ui.DefaultViewStateStore
 import com.app.juawcevada.whatscookin.common.ui.LceViewState
 import com.app.juawcevada.whatscookin.common.ui.ViewStateStore
+import com.app.juawcevada.whatscookin.di.ViewModelFactoryCreator
 import com.app.juawcevada.whatscookin.domain.recipe.model.Recipe
 import com.app.juawcevada.whatscookin.domain.recipe.usecase.GetRecipeUseCase
 import com.app.juawcevada.whatscookin.testing.OpenForTesting
@@ -14,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @OpenForTesting
-class RecipeViewModel @Inject constructor(
+class RecipeViewModel(
     val recipeId: String,
     private val getRecipeUseCase: GetRecipeUseCase,
     private val viewStateStore: DefaultViewStateStore<ViewState, ViewEffect> = DefaultViewStateStore(
@@ -91,5 +92,15 @@ class RecipeViewModel @Inject constructor(
 
         @Inject
         constructor() : this(recipe = Recipe())
+    }
+
+    class Factory @Inject constructor(
+        private val getRecipeUseCase: GetRecipeUseCase,
+        private val viewStateStore: DefaultViewStateStore<ViewState, ViewEffect>
+    ) {
+        fun create(recipeId: String) =
+            ViewModelFactoryCreator.create {
+                RecipeViewModel(recipeId, getRecipeUseCase, viewStateStore)
+            }
     }
 }
