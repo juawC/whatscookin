@@ -9,8 +9,8 @@ import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 import com.app.juawcevada.whatscookin.domain.search.usecase.SearchForIngredientsUseCase
 import com.app.juawcevada.whatscookin.domain.search.usecase.SearchForRecipesByIngredientsUseCase
 import com.app.juawcevada.whatscookin.ui.util.*
-import com.app.juawcevada.whatscookin.util.factories.IngredientSearchItemFactory
-import com.app.juawcevada.whatscookin.util.factories.RecipeSearchItemFactory
+import com.app.juawcevada.whatscookin.util.factories.search.IngredientSearchItemFactory
+import com.app.juawcevada.whatscookin.util.factories.search.RecipeSearchItemFactory
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.inOrder
 import com.nhaarman.mockitokotlin2.never
@@ -61,7 +61,7 @@ class RecipesByIngredientViewModelTest {
     }
 
     @Test
-    fun `returns a list of ingredients when searchForIngredient is successful`() =
+    fun `autoCompleteIngredient() when searchForIngredient is successful it updates autocomplete list`() =
         testCoroutineRule.runBlockingTest {
             val autoCompleteList = listOf(
                 IngredientSearchItemFactory.create(name = "Chicken"),
@@ -72,7 +72,9 @@ class RecipesByIngredientViewModelTest {
             viewModel.autoCompleteIngredient("Ch")
 
             inOrder(viewStateObserver, viewEffectObserver) {
-                verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState())
+                verify(viewStateObserver).onChanged(
+                    RecipesByIngredientViewModel.ViewState()
+                )
                 verify(viewEffectObserver).onChanged(
                     RecipesByIngredientViewModel.ViewEffect.IngredientsAutoCompleteUpdate(autoCompleteList).toEvent()
                 )
@@ -80,7 +82,7 @@ class RecipesByIngredientViewModelTest {
         }
 
     @Test
-    fun `does not return a list of ingredients when searchForIngredients not successful`() =
+    fun `autoCompleteIngredient() when searchForIngredients is not successful it does not update autocomplete list`() =
         testCoroutineRule.runBlockingTest {
             mockSearchForIngredientsUseCase(Exception().toError())
 
@@ -93,14 +95,16 @@ class RecipesByIngredientViewModelTest {
         }
 
     @Test
-    fun `does not return a list of ingredients when searchForIngredient returns an empty list`() =
+    fun `autoCompleteIngredient() when searchForIngredient returns an empty list it does not update autocomplete list`() =
         testCoroutineRule.runBlockingTest {
             mockSearchForIngredientsUseCase(emptyList<IngredientSearchItem>().toSuccess())
 
             viewModel.autoCompleteIngredient("Ch")
 
             inOrder(viewStateObserver, viewEffectObserver) {
-                verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState())
+                verify(viewStateObserver).onChanged(
+                    RecipesByIngredientViewModel.ViewState()
+                )
                 verify(viewEffectObserver).onChanged(
                     RecipesByIngredientViewModel.ViewEffect.IngredientsAutoCompleteUpdate(
                         emptyList()
@@ -110,7 +114,7 @@ class RecipesByIngredientViewModelTest {
         }
 
     @Test
-    fun `returns a recipes list when SearchForRecipes is successful`() =
+    fun `addIngredient() when SearchForRecipes is successful it displays a recipe list`() =
         testCoroutineRule.runBlockingTest {
             val recipesList = listOf(
                 RecipeSearchItemFactory.create(title = "Chicken Chili"),
@@ -139,7 +143,7 @@ class RecipesByIngredientViewModelTest {
         }
 
     @Test
-    fun `returns an empty recipes list when SearchForRecipes is successful but returns an empty list`() =
+    fun `addIngredient() when SearchForRecipes is successful but returns an empty list it displays an empty list`() =
         testCoroutineRule.runBlockingTest {
             mockSearchForRecipesByIngredientsUseCase(emptyList<RecipeSearchItem>().toSuccess())
 
@@ -164,7 +168,7 @@ class RecipesByIngredientViewModelTest {
         }
 
     @Test
-    fun `returns an empty recipes list when an ingredient is removed`() =
+    fun `removeIngredient() when a single ingredient is removed it shows an empty recipes list`() =
         testCoroutineRule.runBlockingTest {
             val recipesList = listOf(
                 RecipeSearchItemFactory.create(title = "Chicken"),

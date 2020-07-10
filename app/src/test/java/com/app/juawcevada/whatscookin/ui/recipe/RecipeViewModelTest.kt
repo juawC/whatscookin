@@ -40,7 +40,7 @@ class RecipeViewModelTest {
     }
 
     @Test
-    fun `returns an recipe when getRecipe is successful`() =
+    fun `init() when getRecipe is successful it shows an recipe`() =
         testCoroutineRule.runBlockingTest {
             mockGetRecipeUseCase(Recipe(title = "title").toSuccess())
             initViewModel()
@@ -54,7 +54,7 @@ class RecipeViewModelTest {
         }
 
     @Test
-    fun `returns an error when getRecipe is not successful`() =
+    fun `init() when getRecipe is not successful it returns an error`() =
         testCoroutineRule.runBlockingTest {
             mockGetRecipeUseCase(Exception().toError())
             initViewModel()

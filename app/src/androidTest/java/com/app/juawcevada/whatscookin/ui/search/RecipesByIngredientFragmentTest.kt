@@ -5,18 +5,15 @@ import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
-import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.R.id.list
-import com.app.juawcevada.whatscookin.R.id.searchBar
 import com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util.createFactoryWithNavController
 import com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util.createNavControllerMock
 import com.app.juawcevada.whatscookin.common.util.Event
 import com.app.juawcevada.whatscookin.util.*
-import com.app.juawcevada.whatscookin.util.factories.IngredientSearchItemFactory
-import com.app.juawcevada.whatscookin.util.factories.RecipeSearchItemFactory
+import com.app.juawcevada.whatscookin.util.factories.search.RecipeSearchItemFactory
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Rule
@@ -51,26 +48,6 @@ class RecipesByIngredientFragmentTest {
         }
         list onRecyclerViewPosition 1 checkThatMatches all {
             matcher { hasDescendant(withText("Chicken with veggies!")) }
-        }
-    }
-
-    @Test
-    fun showAutoComplete() {
-        startFragment()
-        viewState.value = RecipesByIngredientViewModel.ViewState()
-
-        searchBar perform typeText("Ch")
-        fragmentScenario.onFragment {
-            it.activity!!.runOnUiThread {
-                viewEffect.value = Event(
-                    RecipesByIngredientViewModel.ViewEffect.IngredientsAutoCompleteUpdate(
-                        listOf(
-                            IngredientSearchItemFactory.create("Chicken"),
-                            IngredientSearchItemFactory.create("Chili")
-                        )
-                    )
-                )
-            }
         }
     }
 

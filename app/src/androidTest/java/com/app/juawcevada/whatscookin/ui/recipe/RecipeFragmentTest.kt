@@ -16,7 +16,7 @@ import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Rule
 import org.junit.Test
-import java.com.app.juawcevada.whatscookin.util.factories.recipe.RecipeFactory
+import com.app.juawcevada.whatscookin.util.factories.recipe.RecipeFactory
 
 class RecipeFragmentTest {
     @get:Rule

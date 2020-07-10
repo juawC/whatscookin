@@ -1,4 +1,4 @@
-package java.com.app.juawcevada.whatscookin.util.factories.recipe
+package com.app.juawcevada.whatscookin.util.factories.recipe
 
 import com.app.juawcevada.whatscookin.domain.recipe.model.ExtendedIngredient
 import com.app.juawcevada.whatscookin.domain.recipe.model.Recipe

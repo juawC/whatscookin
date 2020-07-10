@@ -49,10 +49,10 @@ android {
 
     sourceSets {
         getByName("test") {
-            java.srcDir("src/test-shared")
+            java.srcDir("src/test-shared/java")
         }
         getByName("androidTest") {
-            java.srcDir("src/test-shared")
+            java.srcDir("src/test-shared/java")
         }
     }
 

@@ -1,4 +1,4 @@
-package com.app.juawcevada.whatscookin.util.factories
+package com.app.juawcevada.whatscookin.util.factories.search
 
 import com.app.juawcevada.whatscookin.domain.search.model.Ingredient
 import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
