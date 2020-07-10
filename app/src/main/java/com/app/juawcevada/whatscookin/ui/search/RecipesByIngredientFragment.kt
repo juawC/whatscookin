@@ -17,7 +17,6 @@ import com.app.juawcevada.whatscookin.di.ViewModelFactory
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-
 class RecipesByIngredientFragment : Fragment() {
 
     @Inject
@@ -36,36 +35,44 @@ class RecipesByIngredientFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return RecipesByIngredientFragmentBinding.inflate(inflater, container, false).apply {
+        return RecipesByIngredientFragmentBinding.inflate(
+            inflater,
+            container,
+            false
+        ).apply {
             lifecycleOwner = viewLifecycleOwner
             viewActions = recipesViewModel
             viewModel = recipesViewModel
             list.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             list.adapter = RecipesListAdapter(recipesViewModel)
-            searchIngredients.tag =
-                IngredientsChipAdapter(searchIngredients, recipesViewModel::removeIngredient)
+            searchIngredients.tag = IngredientsChipAdapter(searchIngredients, recipesViewModel::removeIngredient)
 
-            val adapter = IngredientSearchAutoCompleteAdapter(
+            val autoCompleteAdapter = IngredientSearchAutoCompleteAdapter(
                 searchBar,
                 viewLifecycleOwner.lifecycle,
                 recipesViewModel
             )
             viewLifecycleOwner.observeEvent(recipesViewModel.viewEffect) {
                 when (it) {
-                    is RecipesByIngredientViewModel.ViewEffect.IngredientsAutoComplete -> {
-                        adapter.submitList(it.ingredients)
+                    is RecipesByIngredientViewModel.ViewEffect.IngredientsAutoCompleteUpdate -> {
+                        autoCompleteAdapter.submitList(it.ingredients)
                     }
                     is RecipesByIngredientViewModel.ViewEffect.NavigateToDetail -> {
-                        val action =
-                            RecipesByIngredientFragmentDirections
-                                .actionRecipesByIngredientFragmentToRecipeFragment(it.recipe.id)
-                        val image = list.findViewWithTag<ImageView>(it.recipe)
-                        val extras = FragmentNavigatorExtras(image to it.recipe.id)
-                        findNavController().navigate(action, extras)
+                        navigateToDetail(it)
                     }
                 }
             }
-
         }.root
+    }
+
+    private fun RecipesByIngredientFragmentBinding.navigateToDetail(
+        navigateToDetailEffect: RecipesByIngredientViewModel.ViewEffect.NavigateToDetail
+    ) {
+        val action =
+            RecipesByIngredientFragmentDirections
+                .actionRecipesByIngredientFragmentToRecipeFragment(navigateToDetailEffect.recipe.id)
+        val image = list.findViewWithTag<ImageView>(navigateToDetailEffect.recipe)
+        val extras = FragmentNavigatorExtras(image to navigateToDetailEffect.recipe.id)
+        findNavController().navigate(action, extras)
     }
 }

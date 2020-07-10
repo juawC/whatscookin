@@ -3,9 +3,7 @@ package com.app.juawcevada.whatscookin.common.ui
 import androidx.lifecycle.LiveData
 import com.app.juawcevada.whatscookin.common.util.Event
 
-interface ViewStateStore<VS : ViewState, VE : ViewEffect, A : Action<VS, VE>> {
+interface ViewStateStore<VS : ViewState, VE : ViewEffect> {
     val viewState: LiveData<VS>
     val viewEffect: LiveData<Event<VE>>
-    fun sendAction(action: A)
-    fun getCurrentState(): VS
 }

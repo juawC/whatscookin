@@ -5,8 +5,8 @@ import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 
 interface RecipesByIngredientsViewActions : LceViewActions {
     fun openRecipe(recipe: RecipeSearchItem)
-    fun addIngredient(ingredient: String)
-    fun removeIngredient(ingredient: String)
+    fun addIngredient(ingredientName: String)
+    fun removeIngredient(ingredientName: String)
     fun autoCompleteIngredient(partialIngredient: String)
     fun searchRecipes()
 }

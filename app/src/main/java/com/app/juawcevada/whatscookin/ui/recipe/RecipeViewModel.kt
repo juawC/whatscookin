@@ -8,7 +8,7 @@ import arrow.core.toOption
 import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.common.ui.LceViewState
 import com.app.juawcevada.whatscookin.common.ui.ViewStateStore
-import com.app.juawcevada.whatscookin.common.ui.ViewStateStoreImpl
+import com.app.juawcevada.whatscookin.common.ui.DefaultViewStateStore
 import com.app.juawcevada.whatscookin.domain.recipe.model.Recipe
 import com.app.juawcevada.whatscookin.domain.recipe.usecase.GetRecipeUseCase
 import com.app.juawcevada.whatscookin.testing.OpenForTesting
@@ -19,11 +19,11 @@ import javax.inject.Inject
 class RecipeViewModel @Inject constructor(
     val recipeId: String,
     private val getRecipeUseCase: GetRecipeUseCase,
-    private val store: ViewStateStoreImpl<ViewState, ViewEffect, Action> = ViewStateStoreImpl(
+    private val store: DefaultViewStateStore<ViewState, ViewEffect> = DefaultViewStateStore(
         ViewState()
     )
 ) : ViewModel(),
-    ViewStateStore<RecipeViewModel.ViewState, RecipeViewModel.ViewEffect, RecipeViewModel.Action> by store,
+    ViewStateStore<RecipeViewModel.ViewState, RecipeViewModel.ViewEffect> by store,
     RecipeViewActions {
 
     init {

@@ -63,7 +63,7 @@ class RecipesByIngredientFragmentTest {
         fragmentScenario.onFragment {
             it.activity!!.runOnUiThread {
                 viewEffect.value = Event(
-                    RecipesByIngredientViewModel.ViewEffect.IngredientsAutoComplete(
+                    RecipesByIngredientViewModel.ViewEffect.IngredientsAutoCompleteUpdate(
                         listOf(
                             IngredientSearchItemFactory.create("Chicken"),
                             IngredientSearchItemFactory.create("Chili")

@@ -74,7 +74,7 @@ class RecipesByIngredientViewModelTest {
             inOrder(viewStateObserver, viewEffectObserver) {
                 verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState())
                 verify(viewEffectObserver).onChanged(
-                    RecipesByIngredientViewModel.ViewEffect.IngredientsAutoComplete(autoCompleteList).toEvent()
+                    RecipesByIngredientViewModel.ViewEffect.IngredientsAutoCompleteUpdate(autoCompleteList).toEvent()
                 )
             }
         }
@@ -102,7 +102,7 @@ class RecipesByIngredientViewModelTest {
             inOrder(viewStateObserver, viewEffectObserver) {
                 verify(viewStateObserver).onChanged(RecipesByIngredientViewModel.ViewState())
                 verify(viewEffectObserver).onChanged(
-                    RecipesByIngredientViewModel.ViewEffect.IngredientsAutoComplete(
+                    RecipesByIngredientViewModel.ViewEffect.IngredientsAutoCompleteUpdate(
                         emptyList()
                     ).toEvent()
                 )
