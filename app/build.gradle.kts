@@ -91,8 +91,10 @@ dependencies {
     implementation(LibraryDependency.SWIPE_REFRESH_LAYOUT)
     implementation(LibraryDependency.AUTO_COMPLETE)
     implementation(LibraryDependency.HILT_ANDROID)
+    implementation(LibraryDependency.HILT_ANDROIDX)
     kapt(LibraryDependency.SWIPE_REFRESH_LAYOUT)
     kapt(LibraryDependency.HILT_ANDROID_COMPILER)
+    kapt(LibraryDependency.HILT_ANDROIDX_COMPILER)
 
     implementation(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
     implementation(LibraryDependency.COORDINATOR_LAYOUT)

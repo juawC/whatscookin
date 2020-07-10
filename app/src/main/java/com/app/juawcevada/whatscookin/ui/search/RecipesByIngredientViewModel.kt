@@ -1,6 +1,7 @@
 package com.app.juawcevada.whatscookin.ui.search
 
 import androidx.annotation.StringRes
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.juawcevada.whatscookin.R
@@ -16,7 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @OpenForTesting
-class RecipesByIngredientViewModel @Inject constructor(
+class RecipesByIngredientViewModel @ViewModelInject constructor(
     private val searchForRecipesByIngredientsUseCase: SearchForRecipesByIngredientsUseCase,
     private val searchForIngredientsUseCase: SearchForIngredientsUseCase,
     private val viewStateStore: DefaultViewStateStore<ViewState, ViewEffect> = DefaultViewStateStore(

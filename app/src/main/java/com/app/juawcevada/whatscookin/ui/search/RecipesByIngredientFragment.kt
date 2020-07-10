@@ -1,33 +1,23 @@
 package com.app.juawcevada.whatscookin.ui.search
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.app.juawcevada.whatscookin.common.ui.observeEvent
-import com.app.juawcevada.whatscookin.common.ui.viewModelProvider
 import com.app.juawcevada.whatscookin.databinding.RecipesByIngredientFragmentBinding
-import com.app.juawcevada.whatscookin.di.ViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class RecipesByIngredientFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory<RecipesByIngredientViewModel>
-    private lateinit var recipesViewModel: RecipesByIngredientViewModel
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        recipesViewModel = viewModelProvider(viewModelFactory)
-    }
+    private val recipesViewModel: RecipesByIngredientViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

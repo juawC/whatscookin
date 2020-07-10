@@ -17,9 +17,9 @@ private object LibraryVersion {
     const val ARROW = "0.10.4"
     const val SPIN_KIT = "1.4.0"
     const val AUTO_COMPLETE = "1.1.0"
-    const val DAGGER = "2.26"
     const val SWIPE_REFRESH_LAYOUT = "1.0.0"
     const val HILT = "2.28-alpha"
+    const val HILT_ANDROID_X = "1.0.0-alpha01"
 }
 
 object LibraryDependency {
@@ -53,15 +53,10 @@ object LibraryDependency {
     const val COIL = "io.coil-kt:coil:${LibraryVersion.COIL}"
     const val SPIN_KIT = "com.github.ybq:Android-SpinKit:${LibraryVersion.SPIN_KIT}"
     const val AUTO_COMPLETE = "com.otaliastudios:autocomplete:${LibraryVersion.AUTO_COMPLETE}"
-    const val DAGGER = "com.google.dagger:dagger:${LibraryVersion.DAGGER}"
-    const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:${LibraryVersion.DAGGER}"
-    const val DAGGER_ANDROID = "com.google.dagger:dagger-android:${LibraryVersion.DAGGER}"
-    const val DAGGER_ANDROID_SUPPORT =
-        "com.google.dagger:dagger-android-support:${LibraryVersion.DAGGER}"
-    const val DAGGER_ANDROID_COMPILER =
-        "com.google.dagger:dagger-android-processor:${LibraryVersion.DAGGER}"
     const val SWIPE_REFRESH_LAYOUT =
         "androidx.swiperefreshlayout:swiperefreshlayout:${LibraryVersion.SWIPE_REFRESH_LAYOUT}"
     const val HILT_ANDROID = "com.google.dagger:hilt-android:${LibraryVersion.HILT}"
     const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${LibraryVersion.HILT}"
+    const val HILT_ANDROIDX = "androidx.hilt:hilt-lifecycle-viewmodel:${LibraryVersion.HILT_ANDROID_X}"
+    const val HILT_ANDROIDX_COMPILER = "androidx.hilt:hilt-compiler:${LibraryVersion.HILT_ANDROID_X}"
 }
