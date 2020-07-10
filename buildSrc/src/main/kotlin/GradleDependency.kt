@@ -1,6 +1,6 @@
 object GradlePluginVersion {
     const val SAFE_ARGS = CommonVersion.NAVIGATION
-    const val BUILD_TOOLS_VERSION = "4.0.0-beta01"
+    const val BUILD_TOOLS_VERSION = "4.1.0-beta03"
     const val KOTLIN_VERSION = "1.3.21"
 }
 

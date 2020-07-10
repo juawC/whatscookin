@@ -1,7 +1,6 @@
 package com.app.juawcevada.whatscookin.data.search.repository
 
 import com.app.juawcevada.whatscookin.common.data.ListMapper
-import com.app.juawcevada.whatscookin.common.data.Mapper
 import com.app.juawcevada.whatscookin.common.data.Result
 import com.app.juawcevada.whatscookin.common.data.toResult
 import com.app.juawcevada.whatscookin.data.search.api.SearchService
@@ -10,16 +9,15 @@ import com.app.juawcevada.whatscookin.data.search.model.RecipeSearchItemResponse
 import com.app.juawcevada.whatscookin.domain.search.model.IngredientSearchItem
 import com.app.juawcevada.whatscookin.domain.search.model.RecipeSearchItem
 import com.app.juawcevada.whatscookin.domain.search.repository.SearchRepository
+import dagger.Reusable
 import javax.inject.Inject
 
+@Reusable
 class SearchRepositoryImpl @Inject constructor(
     private val searchService: SearchService,
-    recipeMapper: Mapper<RecipeSearchItemResponse, RecipeSearchItem>,
-    ingredientSearchMapper: Mapper<IngredientSearchItemResponse, IngredientSearchItem>
+    private val recipeListMapper: ListMapper<RecipeSearchItemResponse, RecipeSearchItem>,
+    private val ingredientSearchListMapper: ListMapper<IngredientSearchItemResponse, IngredientSearchItem>
 ) : SearchRepository {
-
-    private val recipeListMapper = ListMapper(recipeMapper)
-    private val ingredientSearchListMapper = ListMapper(ingredientSearchMapper)
 
     override suspend fun searchRecipesByIngredients(
         ingredients: List<String>,

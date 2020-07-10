@@ -31,14 +31,6 @@ class RecipeFragment : Fragment() {
         super.onAttach(context)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-/*
-        TODO fix animation
-        sharedElementEnterTransition =
-            TransitionInflater.from(context).inflateTransition(android.R.transition.move)*/
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

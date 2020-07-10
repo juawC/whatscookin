@@ -4,18 +4,18 @@ import com.app.juawcevada.rickspace.di.annotation.ApiConfig
 import com.app.juawcevada.whatscookin.common.data.ApiKeyInterceptor
 import dagger.Module
 import dagger.Provides
+import dagger.Reusable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
 
 @Module
 class ApiModule {
 
     @Provides
-    @Singleton
-    internal fun provideApi(
+    @Reusable
+    internal fun provideRetrofit(
         @ApiConfig url: String,
         okHttpClient: OkHttpClient
     ): Retrofit {
@@ -28,7 +28,7 @@ class ApiModule {
     }
 
     @Provides
-    @Singleton
+    @Reusable
     internal fun provideOkHttpClient(): OkHttpClient {
         val logging = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY

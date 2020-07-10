@@ -9,11 +9,8 @@ import com.app.juawcevada.whatscookin.domain.recipe.model.Recipe
 import javax.inject.Inject
 
 class RecipeMapper @Inject constructor(
-    extendedIngredientMapper: Mapper<ExtendedIngredientResponse, ExtendedIngredient>
-) :
-    Mapper<RecipeResponse, Recipe> {
-
-    private val extendedIngredientListMapper = ListMapper(extendedIngredientMapper)
+    private val extendedIngredientMapper: ListMapper<ExtendedIngredientResponse, ExtendedIngredient>
+) : Mapper<RecipeResponse, Recipe> {
 
     override fun map(input: RecipeResponse): Recipe {
         return with(input) {
@@ -25,7 +22,7 @@ class RecipeMapper @Inject constructor(
                 servings,
                 sourceUrl,
                 image,
-                extendedIngredientListMapper.map(extendedIngredients),
+                extendedIngredientMapper.map(extendedIngredients),
                 sourceName
             )
         }
