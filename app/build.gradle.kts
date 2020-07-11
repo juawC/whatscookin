@@ -38,10 +38,6 @@ android {
             isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
         }
 
-        testOptions {
-            unitTests.isReturnDefaultValues = TestOptions.IS_RETURN_DEFAULT_VALUES
-        }
-
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
@@ -70,6 +66,14 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    hilt {
+        enableTransformForLocalTests = true
+    }
+
+    testOptions {
+        unitTests.isReturnDefaultValues = TestOptions.IS_RETURN_DEFAULT_VALUES
+    }
 }
 configure<AllOpenExtension> {
     annotation("com.app.juawcevada.whatscookin.testing.OpenClass")
@@ -91,10 +95,8 @@ dependencies {
     implementation(LibraryDependency.SWIPE_REFRESH_LAYOUT)
     implementation(LibraryDependency.AUTO_COMPLETE)
     implementation(LibraryDependency.HILT_ANDROID)
-    implementation(LibraryDependency.HILT_ANDROIDX)
     kapt(LibraryDependency.SWIPE_REFRESH_LAYOUT)
     kapt(LibraryDependency.HILT_ANDROID_COMPILER)
-    kapt(LibraryDependency.HILT_ANDROIDX_COMPILER)
 
     implementation(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
     implementation(LibraryDependency.COORDINATOR_LAYOUT)

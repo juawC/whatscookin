@@ -1,29 +1,33 @@
 private object TestLibraryVersion {
     const val JUNIT = "4.12"
-    const val TEST_RUNNER = "1.0.2"
-    const val ESPRESSO_CORE = "3.0.2"
-    const val MOCKITO = "3.0.0"
-    const val MOCKITO_KOTLIN = "2.1.0"
+    const val ANDROID_TEST_JUNIT = "1.1.2-rc01"
+    const val TEST_RUNNER = "1.2.0"
+    const val TEST_RULES = "1.2.0"
+    const val TEST_CORE = "1.2.0"
+    const val TEST_ARCH = "2.1.0"
+    const val ESPRESSO_CORE = "3.3.0-rc01"
+    const val MOCKITO = "3.4.0"
+    const val MOCKITO_KOTLIN = "2.2.0"
     const val ANDROID_X_TEST = "1.2.0"
     const val COROUTINES_ANDROID = "1.3.2"
     const val FRAGMENT_VERSION = "1.2.0"
+    const val HILT = "2.28-alpha"
 }
 
 object TestLibraryDependency {
     const val JUNIT = "junit:junit:${TestLibraryVersion.JUNIT}"
-    const val TEST_RUNNER = "com.android.support.test:runner:${TestLibraryVersion.TEST_RUNNER}"
-    const val ESPRESSO_CORE =
-        "com.android.support.test.espresso:espresso-core:${TestLibraryVersion.ESPRESSO_CORE}"
-    const val MOCKITO_INLINE = "org.mockito:mockito-inline:${TestLibraryVersion.MOCKITO}"
+    const val ANDROID_TEST_JUNIT = "androidx.test.ext:junit:${TestLibraryVersion.ANDROID_TEST_JUNIT}"
+    const val TEST_CORE = "androidx.test:core:${TestLibraryVersion.TEST_CORE}"
+    const val TEST_ARCH = "androidx.arch.core:core-testing:${TestLibraryVersion.TEST_ARCH}"
+    const val TEST_RUNNER = "androidx.test:runner:${TestLibraryVersion.TEST_RUNNER}"
+    const val TEST_RULES = "androidx.test:rules:${TestLibraryVersion.TEST_RULES}"
+    const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${TestLibraryVersion.ESPRESSO_CORE}"
+    const val MOCKITO = "org.mockito:mockito-inline:${TestLibraryVersion.MOCKITO}"
     const val MOCKITO_ANDROID = "org.mockito:mockito-android:${TestLibraryVersion.MOCKITO}"
-    const val MOCKITO_KOTLIN =
-        "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestLibraryVersion.MOCKITO_KOTLIN}"
-    const val COROUTINES_TEST =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${TestLibraryVersion.COROUTINES_ANDROID}"
-    const val ANDROID_X_CORE_TESTING =
-        "android.arch.core:core-testing:${TestLibraryVersion.ANDROID_X_TEST}"
-    const val ANDROID_X_TEST_RULES = "androidx.test:rules:${TestLibraryVersion.ANDROID_X_TEST}"
+    const val MOCKITO_KOTLIN = "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestLibraryVersion.MOCKITO_KOTLIN}"
+    const val COROUTINES_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${TestLibraryVersion.COROUTINES_ANDROID}"
     const val ANDROID_X_TEST_KTS = "androidx.test:core-ktx:${TestLibraryVersion.ANDROID_X_TEST}"
-    const val FRAGMENT_TESTING =
-        "androidx.fragment:fragment-testing:${TestLibraryVersion.FRAGMENT_VERSION}"
+    const val FRAGMENT_TESTING = "androidx.fragment:fragment-testing:${TestLibraryVersion.FRAGMENT_VERSION}"
+    const val HILT_TESTING = "com.google.dagger:hilt-android-testing:${TestLibraryVersion.HILT}"
+    const val HILT_TESTING_COMPILER = "com.google.dagger:hilt-android-compiler:${TestLibraryVersion.HILT}"
 }

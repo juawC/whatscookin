@@ -1,4 +1,4 @@
-package com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util
+package com.app.juawcevada.whatscookin.util
 
 import android.content.res.Resources
 import android.view.View

@@ -14,15 +14,13 @@ import androidx.navigation.ui.setupWithNavController
 import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.common.ui.viewModelProvider
 import com.app.juawcevada.whatscookin.databinding.RecipeFragmentBinding
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.recipe_fragment.*
 import javax.inject.Inject
 
-@AndroidEntryPoint
-class RecipeFragment : Fragment() {
+class RecipeFragment @Inject constructor(
+    private val viewModelFactory: RecipeViewModel.Factory
+) : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: RecipeViewModel.Factory
     private lateinit var recipeViewModel: RecipeViewModel
     private val fragmentArguments: RecipeFragmentArgs by navArgs()
 

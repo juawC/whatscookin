@@ -6,9 +6,8 @@ import androidx.test.espresso.ViewAction
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
-import com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util.RecyclerViewMatcher
+import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers.allOf
 
 infix fun ViewInteraction.checkThatMatches(matcher: Matcher<in View>): ViewInteraction =
     this.check(ViewAssertions.matches(matcher))

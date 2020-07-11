@@ -6,18 +6,22 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.app.juawcevada.whatscookin.R
 import com.app.juawcevada.whatscookin.R.id.loadingView
-import com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util.createFactoryWithNavController
-import com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util.createNavControllerMock
+import com.app.juawcevada.whatscookin.util.createFactoryWithNavController
+import com.app.juawcevada.whatscookin.util.createNavControllerMock
 import com.app.juawcevada.whatscookin.util.checkThatMatches
 import com.app.juawcevada.whatscookin.util.createTestFactory
+import com.app.juawcevada.whatscookin.util.factories.recipe.RecipeFactory
+import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Rule
 import org.junit.Test
-import com.app.juawcevada.whatscookin.util.factories.recipe.RecipeFactory
+import org.junit.runner.RunWith
 
+@RunWith(AndroidJUnit4::class)
 class RecipeFragmentTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -67,9 +71,9 @@ class RecipeFragmentTest {
         fragmentScenario = launchFragmentInContainer(
             themeResId = R.style.AppTheme,
             factory = createFactoryWithNavController(mockNavController) {
-                RecipeFragment().apply {
-                    viewModelFactory = viewModel.createTestFactory()
-                }
+                RecipeFragment(
+                    mock { on { create(any()) } doReturn viewModel.createTestFactory() }
+                )
             }
         )
     }

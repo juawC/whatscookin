@@ -1,4 +1,4 @@
-package com.app.juawcevada.whatscookin.com.app.juawcevada.whatscookin.util
+package com.app.juawcevada.whatscookin.util
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
