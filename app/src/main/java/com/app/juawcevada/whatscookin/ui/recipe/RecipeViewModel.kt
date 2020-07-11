@@ -94,6 +94,7 @@ class RecipeViewModel(
         constructor() : this(recipe = Recipe())
     }
 
+    @OpenForTesting
     class Factory @Inject constructor(
         private val getRecipeUseCase: GetRecipeUseCase,
         private val viewStateStore: DefaultViewStateStore<ViewState, ViewEffect>

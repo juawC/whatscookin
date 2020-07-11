@@ -17,11 +17,11 @@ import com.app.juawcevada.whatscookin.util.*
 import com.app.juawcevada.whatscookin.util.factories.search.RecipeSearchItemFactory
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
+import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class)
+@HiltAndroidTest
 class RecipesByIngredientFragmentTest {
 
     @get:Rule
@@ -44,7 +44,6 @@ class RecipesByIngredientFragmentTest {
                 RecipeSearchItemFactory.create(title = "Chicken with veggies!")
             )
         )
-
 
         list onRecyclerViewPosition 0 checkThatMatches all {
             matcher { hasDescendant(withText("Chicken bacon!")) }

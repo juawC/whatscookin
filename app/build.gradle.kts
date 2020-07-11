@@ -25,6 +25,8 @@ android {
         versionName = AndroidConfig.VERSION_NAME
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
 
+        testInstrumentationRunnerArguments["clearPackageData"] = "true"
+
         buildConfigField("String", "SPOONACULAR_KEY", findProperty("spoonacularKey") as String)
     }
 
@@ -73,6 +75,7 @@ android {
 
     testOptions {
         unitTests.isReturnDefaultValues = TestOptions.IS_RETURN_DEFAULT_VALUES
+        //execution = "ANDROIDX_TEST_ORCHESTRATOR"
     }
 }
 configure<AllOpenExtension> {
@@ -110,5 +113,29 @@ dependencies {
     kapt(LibraryDependency.MOSHI_CODE_GEM)
     implementation(LibraryDependency.ARROW)
 
-    addTestDependencies()
+    testImplementation(TestLibraryDependency.JUNIT)
+    testImplementation(TestLibraryDependency.MOCKITO)
+    testImplementation(TestLibraryDependency.MOCKITO_KOTLIN)
+    testImplementation(TestLibraryDependency.COROUTINES_TEST)
+    testImplementation(TestLibraryDependency.TEST_CORE)
+    testImplementation(TestLibraryDependency.TEST_RULES)
+    testImplementation(TestLibraryDependency.TEST_ARCH)
+
+    androidTestImplementation(TestLibraryDependency.ANDROID_TEST_JUNIT)
+    androidTestImplementation(TestLibraryDependency.TEST_RUNNER)
+    androidTestImplementation(TestLibraryDependency.TEST_RULES)
+    androidTestImplementation(TestLibraryDependency.ANDROID_X_TEST_KTS)
+    androidTestImplementation(TestLibraryDependency.ESPRESSO_CORE)
+    androidTestImplementation(TestLibraryDependency.MOCKITO_ANDROID)
+    androidTestImplementation(TestLibraryDependency.MOCKITO_KOTLIN)
+    androidTestImplementation(TestLibraryDependency.HILT_TESTING)
+    androidTestImplementation(TestLibraryDependency.TEST_CORE)
+    androidTestImplementation(TestLibraryDependency.TEST_ARCH)
+    androidTestImplementation(TestLibraryDependency.JUNIT_4_13)
+
+    kaptAndroidTest(TestLibraryDependency.HILT_TESTING_COMPILER)
+
+    androidTestUtil(TestLibraryDependency.TEST_ORCHESTRATOR)
+
+    debugImplementation(TestLibraryDependency.FRAGMENT_TESTING)
 }
